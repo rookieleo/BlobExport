@@ -122,7 +122,7 @@ public class DBHelper
         return DBNameList;
     }
 
-    public static void SaveData(string ip, string username, string password, string dbName, string tableName, string columnName, string strWhere, string path)
+    public static void SaveData(string ip, string username, string password, string dbName, string tableName, string columnName, string strWhere, string path, int type)
     {
         using (SqlConnection Connection = new SqlConnection(String.Format("Data Source = {0};Initial Catalog = {3};User ID = {1};PWD = {2}", ip, username, password, dbName)))
         {
@@ -139,22 +139,48 @@ public class DBHelper
 
                     while (dr.Read())
                     {
-                        path = Path.GetDirectoryName(path) + "\\" + DateTime.Now.ToString("yyyyMMddHHmmss") + Convert.ToString(count) + ".dat";
-
-                        using (FileStream fs = new FileStream(path, FileMode.OpenOrCreate))
+                        switch (type)
                         {
-                            using (BinaryWriter binWriter = new BinaryWriter(fs))
-                            {
-                                byte[] data = (byte[])dr["data"];
+                            case 0:
+                                path = Path.GetDirectoryName(path) + "\\" + DateTime.Now.ToString("yyyyMMddHHmmss") + Convert.ToString(count) + ".dat";
 
-                                binWriter.Write(data, 0, data.Length);
+                                using (FileStream fs = new FileStream(path, FileMode.OpenOrCreate))
+                                {
+                                    using (BinaryWriter binWriter = new BinaryWriter(fs))
+                                    {
+                                        byte[] data = (byte[])dr["data"];
 
-                                binWriter.Close();
-                            }
-                            fs.Close();
+                                        binWriter.Write(data, 0, data.Length);
+
+                                        binWriter.Close();
+                                    }
+                                    fs.Close();
+                                }
+
+                                count++;
+                                break;
+                            case 1:
+                                path = Path.GetDirectoryName(path) + "\\" + DateTime.Now.ToString("yyyyMMddHHmmss") + Convert.ToString(count) + ".txt";
+
+                                using (FileStream fs = new FileStream(path, FileMode.OpenOrCreate))
+                                {
+
+                                    using (StreamWriter sWriter = new StreamWriter(fs))
+                                    {
+                                        byte[] data = (byte[])dr["data"];
+
+                                        sWriter.Write(Convert.ToBase64String(data));
+
+                                        sWriter.Flush();
+
+                                        sWriter.Close();
+                                    }
+                                    fs.Close();
+                                }
+
+                                count++;
+                                break;
                         }
-
-                        count++;
                     }
                 }
             }

@@ -60,13 +60,25 @@ namespace BlobExport
         {
             SaveFileDialog sfd = new SaveFileDialog();
             sfd.InitialDirectory = System.AppDomain.CurrentDomain.BaseDirectory;
-            sfd.FileName = DateTime.Now.ToString("yyyyMMddHHmmss") + ".dat";
-            sfd.Filter = "二进制数据文件（*.dat）|*.dat";
             sfd.FilterIndex = 1;
-            sfd.DefaultExt = ".dat";
             sfd.DereferenceLinks = false;
-            sfd.Title = "二进制数据文件导出";
             sfd.RestoreDirectory = true;
+            switch (mComboBox4.SelectedIndex)
+            {
+                case 0:
+                    sfd.FileName = (DateTime.Now.ToString("yyyyMMddHHmmss") + ".dat");
+                    sfd.Filter = "二进制数据文件（*.dat）|*.dat";
+                    sfd.DefaultExt = ".dat";
+                    sfd.Title = "二进制数据文件导出";
+                    break;
+                case 1:
+                    sfd.FileName = (DateTime.Now.ToString("yyyyMMddHHmmss") + ".txt");
+                    sfd.Filter = "Base64数据（*.txt）|*.txt";
+                    sfd.DefaultExt = ".txt";
+                    sfd.Title = "Base64数据文件导出";
+                    break;
+            }
+
 
             //点了保存按钮进入 
             if (sfd.ShowDialog() == DialogResult.OK)
@@ -75,9 +87,11 @@ namespace BlobExport
                 String tableName = this.mComboBox2.Items[this.mComboBox2.SelectedIndex].ToString();
                 String columnName = this.mComboBox3.Items[this.mComboBox3.SelectedIndex].ToString();
 
+                int type = mComboBox4.SelectedIndex;
+
                 this.Waiting(delegate
                 {
-                    DBHelper.SaveData(this.mTextBox1.Text, this.mTextBox2.Text, this.mTextBox3.Text, dbName, tableName, columnName, this.mTextBox4.Text, sfd.FileName.ToString());
+                    DBHelper.SaveData(this.mTextBox1.Text, this.mTextBox2.Text, this.mTextBox3.Text, dbName, tableName, columnName, this.mTextBox4.Text, sfd.FileName.ToString(), type);
                 }, ERollingBarStyle.PointsRolling, "正在导出，请稍候");
             }
         }

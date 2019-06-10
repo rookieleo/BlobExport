@@ -42,6 +42,7 @@
             this.mTextBox2 = new Momo.Forms.MTextBox();
             this.mTextBox3 = new Momo.Forms.MTextBox();
             this.mTextBox4 = new Momo.Forms.MTextBox();
+            this.mComboBox4 = new Momo.Forms.MComboBox();
             this.SuspendLayout();
             // 
             // mButton1
@@ -62,7 +63,7 @@
             this.mButton1.HoverBackColor.ToColor = System.Drawing.Color.SeaGreen;
             this.mButton1.Image = null;
             this.mButton1.ImageSize = new System.Drawing.Size(16, 16);
-            this.mButton1.Location = new System.Drawing.Point(4, 332);
+            this.mButton1.Location = new System.Drawing.Point(4, 363);
             this.mButton1.Name = "mButton1";
             this.mButton1.Radius = 10;
             this.mButton1.RadiusMode = Momo.Forms.RadiusMode.All;
@@ -90,7 +91,7 @@
             this.mButton2.HoverBackColor.ToColor = System.Drawing.Color.SeaGreen;
             this.mButton2.Image = null;
             this.mButton2.ImageSize = new System.Drawing.Size(16, 16);
-            this.mButton2.Location = new System.Drawing.Point(196, 332);
+            this.mButton2.Location = new System.Drawing.Point(196, 363);
             this.mButton2.Name = "mButton2";
             this.mButton2.Radius = 10;
             this.mButton2.RadiusMode = Momo.Forms.RadiusMode.All;
@@ -116,7 +117,7 @@
             this.mComboBox1.BorderTopStyle = System.Windows.Forms.ButtonBorderStyle.Solid;
             this.mComboBox1.BorderTopWidth = 1;
             this.mComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.mComboBox1.Location = new System.Drawing.Point(4, 168);
+            this.mComboBox1.Location = new System.Drawing.Point(4, 165);
             this.mComboBox1.Name = "mComboBox1";
             this.mComboBox1.SelectedIndex = -1;
             this.mComboBox1.SelectedItem = null;
@@ -142,7 +143,7 @@
             this.mComboBox2.BorderTopStyle = System.Windows.Forms.ButtonBorderStyle.Solid;
             this.mComboBox2.BorderTopWidth = 1;
             this.mComboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.mComboBox2.Location = new System.Drawing.Point(4, 207);
+            this.mComboBox2.Location = new System.Drawing.Point(4, 203);
             this.mComboBox2.Name = "mComboBox2";
             this.mComboBox2.SelectedIndex = -1;
             this.mComboBox2.SelectedItem = null;
@@ -168,7 +169,7 @@
             this.mComboBox3.BorderTopStyle = System.Windows.Forms.ButtonBorderStyle.Solid;
             this.mComboBox3.BorderTopWidth = 1;
             this.mComboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.mComboBox3.Location = new System.Drawing.Point(4, 246);
+            this.mComboBox3.Location = new System.Drawing.Point(4, 241);
             this.mComboBox3.Name = "mComboBox3";
             this.mComboBox3.SelectedIndex = -1;
             this.mComboBox3.SelectedItem = null;
@@ -198,7 +199,7 @@
             // 
             this.mTextBox2.ActivtedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(182)))), ((int)(((byte)(1)))));
             this.mTextBox2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(195)))), ((int)(((byte)(199)))));
-            this.mTextBox2.Location = new System.Drawing.Point(4, 90);
+            this.mTextBox2.Location = new System.Drawing.Point(4, 89);
             this.mTextBox2.MaxLength = 32767;
             this.mTextBox2.Name = "mTextBox2";
             this.mTextBox2.PasswordChar = '\0';
@@ -213,7 +214,7 @@
             // 
             this.mTextBox3.ActivtedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(182)))), ((int)(((byte)(1)))));
             this.mTextBox3.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(195)))), ((int)(((byte)(199)))));
-            this.mTextBox3.Location = new System.Drawing.Point(4, 129);
+            this.mTextBox3.Location = new System.Drawing.Point(4, 127);
             this.mTextBox3.MaxLength = 32767;
             this.mTextBox3.Name = "mTextBox3";
             this.mTextBox3.PasswordChar = '\0';
@@ -228,7 +229,7 @@
             // 
             this.mTextBox4.ActivtedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(182)))), ((int)(((byte)(1)))));
             this.mTextBox4.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(195)))), ((int)(((byte)(199)))));
-            this.mTextBox4.Location = new System.Drawing.Point(4, 285);
+            this.mTextBox4.Location = new System.Drawing.Point(4, 279);
             this.mTextBox4.MaxLength = 32767;
             this.mTextBox4.Name = "mTextBox4";
             this.mTextBox4.PasswordChar = '\0';
@@ -238,6 +239,34 @@
             this.mTextBox4.Title = "筛选条件：";
             this.mTextBox4.UseSystemPasswordChar = false;
             this.mTextBox4.WaterText = "";
+            // 
+            // mComboBox4
+            // 
+            this.mComboBox4.BackColor = System.Drawing.Color.White;
+            this.mComboBox4.BorderBottomColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(140)))), ((int)(((byte)(141)))));
+            this.mComboBox4.BorderBottomStyle = System.Windows.Forms.ButtonBorderStyle.Solid;
+            this.mComboBox4.BorderBottomWidth = 1;
+            this.mComboBox4.BorderLeftColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(140)))), ((int)(((byte)(141)))));
+            this.mComboBox4.BorderLeftStyle = System.Windows.Forms.ButtonBorderStyle.Solid;
+            this.mComboBox4.BorderLeftWidth = 1;
+            this.mComboBox4.BorderRightColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(140)))), ((int)(((byte)(141)))));
+            this.mComboBox4.BorderRightStyle = System.Windows.Forms.ButtonBorderStyle.Solid;
+            this.mComboBox4.BorderRightWidth = 1;
+            this.mComboBox4.BorderTopColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(140)))), ((int)(((byte)(141)))));
+            this.mComboBox4.BorderTopStyle = System.Windows.Forms.ButtonBorderStyle.Solid;
+            this.mComboBox4.BorderTopWidth = 1;
+            this.mComboBox4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.mComboBox4.Items.AddRange(new object[] {
+            "二进制",
+            "Base64"});
+            this.mComboBox4.Location = new System.Drawing.Point(4, 317);
+            this.mComboBox4.Name = "mComboBox4";
+            this.mComboBox4.SelectedIndex = -1;
+            this.mComboBox4.SelectedItem = null;
+            this.mComboBox4.SelectedText = "";
+            this.mComboBox4.Size = new System.Drawing.Size(292, 32);
+            this.mComboBox4.TabIndex = 26;
+            this.mComboBox4.Title = "导出格式：";
             // 
             // FormMain
             // 
@@ -290,7 +319,8 @@
             this.Caption.WindowState = System.Windows.Forms.FormWindowState.Normal;
             this.Caption.X = 1;
             this.Caption.Y = 1;
-            this.ClientSize = new System.Drawing.Size(300, 366);
+            this.ClientSize = new System.Drawing.Size(300, 397);
+            this.Controls.Add(this.mComboBox4);
             this.Controls.Add(this.mTextBox4);
             this.Controls.Add(this.mTextBox3);
             this.Controls.Add(this.mTextBox2);
@@ -323,6 +353,7 @@
         private Momo.Forms.MTextBox mTextBox2;
         private Momo.Forms.MTextBox mTextBox3;
         private Momo.Forms.MTextBox mTextBox4;
+        private Momo.Forms.MComboBox mComboBox4;
     }
 }
 
